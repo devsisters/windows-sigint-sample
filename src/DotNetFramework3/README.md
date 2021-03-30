@@ -1,6 +1,6 @@
-# .NET Framework 기반 SIGINT 처리 예제
+# .NET Framework 2.0 ~ 3.5 기반 SIGINT 처리 예제
 
-이 샘플 프로젝트는 .NET Framework 기반 SIGINT를 처리하는 방법을 설명하는 예제 애플리케이션입니다.
+이 샘플 프로젝트는 .NET Framework 2.0 ~ 3.5 기반 SIGINT를 처리하는 방법을 설명하는 예제 애플리케이션입니다.
 
 ## 프로젝트 빌드에 필요한 구성 요소
 
@@ -11,7 +11,13 @@
   - Desktop .NET 워크로드
 - Docker Desktop for Windows
 
-## 프로젝트 빌드 및 테스트 방법
+## 프로젝트 빌드 방법
+
+1. Chocolatey Package Manager를 설치한 후 관리자 권한으로 명령 프롬프트를 실행한 후 아래 명령어를 실행합니다.
+
+```powershell
+choco install vcredist2017 windows-kill -y
+```
 
 1. `x64 Native Tools Command Prompt for VS` 명령 프롬프트를 엽니다.
 
@@ -22,6 +28,8 @@
 ```powershell
 msbuild.exe .\SignalHandlerTestManaged.sln /p:Configuration=Release /p:Platform="Any CPU"
 ```
+
+## 프로젝트 테스트 방법
 
 1. .\RunTest.ps1 PowerShell 스크립트를 실행하여 Docker 이미지 빌드와 테스트를 실행합니다.
 
