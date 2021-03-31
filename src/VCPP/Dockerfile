@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/windows/nanoserver:1909
+FROM mcr.microsoft.com/windows/nanoserver:2004
 ENV WAIT_SECONDS 10
 
 USER ContainerAdministrator
