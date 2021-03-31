@@ -7,6 +7,7 @@
 - Chocolatey Package Manager 및 추가 패키지
   - `windows-kill` 패키지
   - `vcredist2017` 패키지
+  - `vswhere` 패키지
 - Visual Studio 2017
   - Desktop .NET 워크로드
 - Docker Desktop for Windows

@@ -1,3 +1,8 @@
+$msbuildPath = vswhere -latest -requires Microsoft.Component.MSBuild -find MSBuild\**\Bin\MSBuild.exe | select-object -first 1
+if ($msbuildPath) {
+  & $msbuildPath .\SignalHandlerTestNative.sln /p:Configuration=Release /p:Platform=x64
+}
+
 $windowskill=$(Get-ChildItem -Path $env:ProgramData\chocolatey\lib\windows-kill\tools\ -Include *.exe -recurse | % { $_.FullName })
 $vcpdll=$(Get-ChildItem -Path "$env:WinDir\system32\msvcp140*.dll" | % { $_.FullName}) + $(Get-ChildItem -Path "$env:WinDir\system32\vcruntime140*.dll" | % { $_.FullName})
 
