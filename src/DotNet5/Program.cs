@@ -20,7 +20,7 @@ namespace SignalHandlerTestManaged
             }
             else
             {
-                Console.Out.WriteLine("Wait second specified. (%s).", waitSecondsArgs);
+                Console.Out.WriteLine("Wait second specified. ({0}).", waitSecondsArgs);
                 waitSeconds = Math.Max(1, waitSeconds);
             }
 
