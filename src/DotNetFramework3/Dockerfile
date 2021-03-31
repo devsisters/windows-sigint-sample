@@ -1,4 +1,4 @@
-﻿FROM mcr.microsoft.com/windows/servercore:1909
+﻿FROM mcr.microsoft.com/dotnet/framework/runtime:3.5-windowsservercore-1909
 ENV WAIT_SECONDS 10
 
 USER ContainerAdministrator
