@@ -26,7 +26,7 @@ $dockercmd=$(Get-Command 'docker.exe').Source
 
 Start-Process -FilePath $dockercmd -ArgumentList "logs -f $container"
 
-& $dockercmd run -dt --name=$container --mount type=bind,source="$((Get-Item '.\windows-kill\').FullName)",target="C:/windows-kill/" signaltestmgmt:latest
+& $dockercmd run -dt --name=$container -e WAIT_SECONDS=10 --mount type=bind,source="$((Get-Item '.\windows-kill\').FullName)",target="C:/windows-kill/" signaltestmgmt:latest
 
 Start-Sleep -Seconds 1
 

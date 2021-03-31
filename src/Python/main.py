@@ -5,13 +5,22 @@ import os
 
 from typing import Any
 
+DEFAULT_WAIT_SEC = 600
 
 def _exit_gracefully(_signum: int, _frame: Any):
     """Ctrl+C 조합이나 SIGINT 이벤트에 대한 처리를 담당하는 처리기
     :param _signum: 종료 시그널의 종류
     :param _frame: 처리기 함수 주소
     """
-    print("Waiting 10 seconds")
+    wait_sec = os.environ.get('WAIT_SECONDS')
+    try:
+        wait_sec = int(wait_sec)
+        print(f"Wait second specified. {wait_sec} seconds.")
+    except:
+        print(f"Falling back to {DEFAULT_WAIT_SEC} seconds.")
+        wait_sec = DEFAULT_WAIT_SEC
+    
+    print(f"Waiting {wait_sec} seconds")
     time.sleep(10)
 
     # 원래 사용하던 핸들러로 되돌려놓지 않으면 부작용이 발생하므로 아래 코드는 지우면 안됨
